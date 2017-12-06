@@ -1,0 +1,24 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "training chat",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	   "start": "node_modules/.bin/static-server C:/Users/66826/repo/myChat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriiGri/myChat.git"
+  },
+  "author": "Valera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValeriiGri/myChat/issues"
+  },
+  "homepage": "https://github.com/ValeriiGri/myChat#readme",
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "static-server": "^3.0.0"
+  }
+}
