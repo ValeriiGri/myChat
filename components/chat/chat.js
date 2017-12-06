@@ -20,11 +20,9 @@ export class Chat{
 					</li>
 			`;
 		}).join('');
-		console.log(messagesHTML)
 
 		this.el.innerHTML = `
-							<div class="chat__header">
-							</div>
+							<div class="chat__header">Chat header</div>
 							<ul class="chat__messages">${messagesHTML}</ul>
 							`;
 	}

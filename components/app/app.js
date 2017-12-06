@@ -43,6 +43,7 @@ export class App{
 		document.querySelector('.js-app>div:last-child').classList.add('form');
 
 		chat.render();
+		form.render();
 
 	}
 

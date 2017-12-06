@@ -24,7 +24,7 @@
  .chat__messages__msg{
  	padding:10px;
  }
- .chat__messages::-webkit-scrollbar{
+.chat__messages::-webkit-scrollbar{
     width:12px;
 }
 .chat__messages::-webkit-scrollbar-thumb{
@@ -37,15 +37,15 @@
     border-color: #555;
     background-color: #9FF781;
 }
- .chat__form__sendBtn{
+form{
+ 	margin-top: 20px;
+ 	padding:15px;
+ }
+.form__sendBtn{
  	background-color: #66ff66;
  	border-radius: 15px;
  	width:75px;
  	opacity: 0.75;
- }
-form{
- 	margin-top: 20px;
- 	padding:15px;
  }
 .js-app{
 	display: flex;
