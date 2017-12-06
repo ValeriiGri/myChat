@@ -6,20 +6,26 @@ export class Chat{
 
 	render(){
 
+		let messagesHTML = this.messages.map(function({avatar,time,sender,messageText}){
+			return `
+					<li class="chat__messages__msg">
+						<div>
+							<span class="chat__messages__msg__avatar">${avatar}</span>
+							<span class="chat__messages__msg__time">${time}</span>
+						</div>
+						<div>
+							<span class="chat__messages__msg__sender">${sender}</span>
+							<span class="chat__messages__msg__text">${messageText}</span>
+						</div>
+					</li>
+			`;
+		}).join('');
+		console.log(messagesHTML)
 
 		this.el.innerHTML = `
 							<div class="chat__header">
 							</div>
-							<ul class="chat__messages">${}</ul>
+							<ul class="chat__messages">${messagesHTML}</ul>
 							`;
-		let messageList = document.querySelector('chat__messages');
-		messageList.innerHTML = `
-							<li class="chat__messages__msg">
-								<span class="chat__messages__msg__text"></span>
-								<span class="chat__messages__msg__time"></span>
-								<span class="chat__messages__msg__avatar"></span>
-							</li>
-							`;
-		document.querySelector('.chat__messages').append(liItem);
 	}
 }

@@ -20,7 +20,9 @@
  	padding: 15px;
  	overflow-y: auto;
  	height:200px;
- 	bottom:0;
+ }
+ .chat__messages__msg{
+ 	padding:10px;
  }
  .chat__messages::-webkit-scrollbar{
     width:12px;

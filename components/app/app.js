@@ -10,18 +10,24 @@ export class App{
 			el:document.createElement('div'),
 			messages:[
 				{
+					avatar:'qwe',
+					time:'21:00',
 					sender:'sender_1',
-					message:'first message'
+					messageText:'first message'
 				},
 
 				{
+					avatar:'qwe',
+					time:'21:00',
 					sender:'sender_2',
-					message:'first message'
+					messageText:'first message'
 				},
 
 				{
+					avatar:'qwe',
+					time:'21:00',
 					sender:'sender_1',
-					message:'second message'
+					messageText:'second message'
 				}
 			]
 		});
@@ -35,6 +41,8 @@ export class App{
 		//add classes to divs
 		document.querySelector('.js-app>div').classList.add('chat');
 		document.querySelector('.js-app>div:last-child').classList.add('form');
+
+		chat.render();
 
 	}
 
