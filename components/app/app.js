@@ -35,12 +35,19 @@ export class App{
 		let form = new Form({
 			el:document.createElement('div'),
 			onSubmit:function(message){
+
+				let time = new Date();
+				let hours = time.getHours();
+				let mins = time.getMinutes();
+
 				chat.messages.unshift({
 					avatar:'avatar',
-					time:'21:00',
+					hours:hours,
+					mins:mins,
 					sender:'me:',
 					messageText:message
 				});
+				
 				chat.render();
 			}
 		});

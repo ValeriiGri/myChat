@@ -6,12 +6,12 @@ export class Chat{
 
 	render(){
 
-		let messagesHTML = this.messages.map(function({avatar,time,sender,messageText}){
+		let messagesHTML = this.messages.map(function({avatar,hours,mins,sender,messageText}){
 			return `
 					<li class="chat__messages__msg">
 						<div>
 							<span class="chat__messages__msg__avatar">${avatar}</span>
-							<span class="chat__messages__msg__time">${time}</span>
+							<span class="chat__messages__msg__time">${hours}:${mins}</span>
 						</div>
 						<div>
 							<span class="chat__messages__msg__sender">${sender}</span>
