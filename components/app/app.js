@@ -39,6 +39,9 @@ export class App{
 				let time = new Date();
 				let hours = time.getHours();
 				let mins = time.getMinutes();
+				
+				if(hours<10) hours ='0' + hours;
+				if(mins<10) mins ='0'+ mins;
 
 				chat.messages.unshift({
 					avatar:'avatar',
@@ -47,7 +50,7 @@ export class App{
 					sender:'me:',
 					messageText:message
 				});
-				
+
 				chat.render();
 			}
 		});
