@@ -12,21 +12,21 @@ export class App{
 				{
 					avatar:'avatar',
 					time:'21:00',
-					sender:'sender_1',
+					sender:'sender_1:',
 					messageText:'first message'
 				},
 
 				{
 					avatar:'avatar',
 					time:'21:00',
-					sender:'sender_2',
+					sender:'sender_2:',
 					messageText:'first message'
 				},
 
 				{
 					avatar:'avatar',
 					time:'21:00',
-					sender:'sender_1',
+					sender:'sender_1:',
 					messageText:'second message'
 				}
 			]
@@ -35,12 +35,13 @@ export class App{
 		let form = new Form({
 			el:document.createElement('div'),
 			onSubmit:function(message){
-				chat.messages.push({
+				chat.messages.unshift({
 					avatar:'avatar',
 					time:'21:00',
-					sender:'me',
+					sender:'me:',
 					messageText:message
 				});
+				chat.render();
 			}
 		});
 
