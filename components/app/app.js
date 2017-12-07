@@ -33,7 +33,15 @@ export class App{
 		});
 
 		let form = new Form({
-			el:document.createElement('div')
+			el:document.createElement('div'),
+			onSubmit:function(message){
+				chat.messages.push({
+					avatar:'avatar',
+					time:'21:00',
+					sender:'me',
+					messageText:message
+				});
+			}
 		});
 
 		//insert divs in js-app

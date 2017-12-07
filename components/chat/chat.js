@@ -2,6 +2,7 @@ export class Chat{
 	constructor({el, messages}){
 		this.el = el;
 		this.messages = messages;
+		console.log(messages)
 	}
 
 	render(){

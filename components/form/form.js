@@ -1,6 +1,7 @@
 export class Form{
-	constructor({el}){
+	constructor({el,onSubmit}){
 		this.el = el;
+		this.onSubmit = onSubmit;
 		this.newMessage;
 
 		this.el.addEventListener('submit', this.eventListener.bind(this));
@@ -16,7 +17,7 @@ export class Form{
 		if(target.tagName == 'FORM'){
 			this.newMessage = target.querySelector('textarea').value;
 		}
-		console.log(this.newMessage);
+		this.onSubmit(this.newMessage);
 	}	
 
 	render(){
