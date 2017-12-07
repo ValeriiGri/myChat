@@ -1,7 +1,22 @@
 export class Form{
 	constructor({el}){
 		this.el = el;
+		this.newMessage;
 
+		this.el.addEventListener('submit', this.eventListener.bind(this));
+
+								
+	}
+
+	eventListener(event){
+		event.preventDefault();
+
+		let target = event.target;
+
+		if(target.tagName == 'FORM'){
+			this.newMessage = target.querySelector('textarea').value;
+		}
+		console.log(this.newMessage);
 	}	
 
 	render(){

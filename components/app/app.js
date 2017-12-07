@@ -10,21 +10,21 @@ export class App{
 			el:document.createElement('div'),
 			messages:[
 				{
-					avatar:'qwe',
+					avatar:'avatar',
 					time:'21:00',
 					sender:'sender_1',
 					messageText:'first message'
 				},
 
 				{
-					avatar:'qwe',
+					avatar:'avatar',
 					time:'21:00',
 					sender:'sender_2',
 					messageText:'first message'
 				},
 
 				{
-					avatar:'qwe',
+					avatar:'avatar',
 					time:'21:00',
 					sender:'sender_1',
 					messageText:'second message'
