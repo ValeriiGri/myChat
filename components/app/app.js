@@ -11,21 +11,24 @@ export class App{
 			messages:[
 				{
 					avatar:'avatar',
-					time:'21:00',
+					hours:'21',
+					mins:'00',
 					sender:'sender_1:',
 					messageText:'first message'
 				},
 
 				{
 					avatar:'avatar',
-					time:'21:00',
+					hours:'21',
+					mins:'00',
 					sender:'sender_2:',
 					messageText:'first message'
 				},
 
 				{
 					avatar:'avatar',
-					time:'21:00',
+					hours:'21',
+					mins:'00',
 					sender:'sender_1:',
 					messageText:'second message'
 				}
@@ -36,20 +39,20 @@ export class App{
 			el:document.createElement('div'),
 			onSubmit:function(message){
 
-				let time = new Date();
-				let hours = time.getHours();
-				let mins = time.getMinutes();
-				
-				if(hours<10) hours ='0' + hours;
-				if(mins<10) mins ='0'+ mins;
+					let time = new Date();
+					let hours = time.getHours();
+					let mins = time.getMinutes();
+					
+					if(hours<10) hours ='0' + hours;
+					if(mins<10) mins ='0'+ mins;
 
-				chat.messages.unshift({
-					avatar:'avatar',
-					hours:hours,
-					mins:mins,
-					sender:'me:',
-					messageText:message
-				});
+					chat.messages.unshift({
+						avatar:'avatar',
+						hours:hours,
+						mins:mins,
+						sender:'me:',
+						messageText:message
+					});
 
 				chat.render();
 			}
