@@ -16,11 +16,18 @@ export class App{
   						return;
   					}
   					const data =  JSON.parse(xhr.responseText);
-  					chat.messages = data;
+
+  					let dataArr = [];
+
+  					for(let key in data){
+  						dataArr.push(data[key]);
+  					}
+
+  					chat.messages = dataArr;
   					chat.render();
 				});
 
-				xhr.open('GET', 'data/messages.json', true);
+				xhr.open('GET', 'https://components-1601-1930.firebaseio.com/chat/messages.json', true);
 				xhr.send();
 			},
 			messages:[]
@@ -38,11 +45,9 @@ export class App{
 					if(mins<10) mins ='0'+ mins;
 
 					chat.messages.unshift({
-						avatar:'avatar',
-						hours:hours,
-						mins:mins,
-						sender:'me:',
-						messageText:message
+						date:[hours,mins],
+						name:'me',
+						text:message
 					});
 
 				chat.render();

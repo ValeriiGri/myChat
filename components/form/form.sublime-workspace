@@ -1,0 +1,725 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"eve",
+				"eventListener"
+			],
+			[
+				"event",
+				"eventListener"
+			],
+			[
+				"nav",
+				"nav-height"
+			],
+			[
+				"main",
+				"main__plus"
+			],
+			[
+				"mai",
+				"main__header"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"spa",
+				"space-between"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"paddin",
+				"padding"
+			],
+			[
+				"space",
+				"space-around"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"col",
+				"col-md-4"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"li",
+				"light-blue"
+			],
+			[
+				"se",
+				"section\tTag"
+			],
+			[
+				"light",
+				"light-gray"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"text",
+				"text-left"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"dark",
+				"dark-gray"
+			],
+			[
+				"dar",
+				"dark-gray"
+			],
+			[
+				"fo",
+				"font-size-2"
+			],
+			[
+				"water",
+				"water-info-list"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"border-",
+				"border-left"
+			],
+			[
+				"i",
+				"icons"
+			],
+			[
+				"op",
+				"option\tTag"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"input",
+				"input-group"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"h",
+				"h4\tTag"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"tar",
+				"transform"
+			],
+			[
+				"trans",
+				"transform"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"ro",
+				"rotate"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"ta",
+				"table"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"fle",
+				"flex-grow"
+			],
+			[
+				"sp",
+				"space-between"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"current",
+				"currentItemValue"
+			],
+			[
+				"get",
+				"getSums"
+			],
+			[
+				"ch",
+				"changeStr"
+			],
+			[
+				"is",
+				"isInArr"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"c",
+				"class"
+			],
+			[
+				"num",
+				"number"
+			],
+			[
+				"pr",
+				"property1"
+			],
+			[
+				"S",
+				"Script"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"pro",
+				"prompt"
+			],
+			[
+				"img",
+				"img-circle"
+			],
+			[
+				"contai",
+				"container"
+			],
+			[
+				"sect",
+				"section-subheading"
+			],
+			[
+				"secti",
+				"section-heading"
+			],
+			[
+				"auth",
+				"authMessage"
+			],
+			[
+				"_",
+				"_SERVER"
+			],
+			[
+				"user",
+				"userInfo"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"mess",
+				"messageText"
+			],
+			[
+				"message",
+				"messageTitle"
+			],
+			[
+				"un",
+				"unknownError"
+			],
+			[
+				"link",
+				"linkReg"
+			],
+			[
+				"re",
+				"ret\treturn"
+			],
+			[
+				"session",
+				"session_start"
+			],
+			[
+				"article",
+				"articles"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"section",
+				"sectionData"
+			],
+			[
+				"pages",
+				"pagesCount"
+			],
+			[
+				"getTemplate",
+				"getTemplateReplace"
+			],
+			[
+				"art",
+				"articles"
+			],
+			[
+				"prev",
+				"prevCount"
+			],
+			[
+				"P",
+				"Paul"
+			],
+			[
+				"bo",
+				"border-style"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"p",
+				"prompt"
+			],
+			[
+				"rate",
+				"rateEURO"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/66826/repo/trainingChat/components/chat/chat.js",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "prefs",
+		"selected_items":
+		[
+			[
+				"prefs",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"package control:",
+				"Package Control: Install Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Install Package Control"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/66826/repo/chat/index.html",
+		"/C/Users/66826/repo/chat/package.json",
+		"/C/Users/66826/repo/chat/static-server",
+		"/C/Users/66826/repo/chat/style.css",
+		"/C/Users/66826/repo/chat/components/script.js",
+		"/C/Users/66826/repo/chat/.sublimelinterrc.js",
+		"/C/Users/66826/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/66826/repo/chat/.eslintrc.js",
+		"/C/Program Files/Sublime Text 3/eslintrc.sublime-project",
+		"/C/Program Files/Sublime Text 3/eslintrc.js",
+		"/C/Users/66826/repo/chat/eslintrc.js",
+		"/C/Users/66826/repo/gallery/index.html",
+		"/C/Users/66826/repo/gallery/style.css",
+		"/C/Users/66826/repo/gallery/gallery.js",
+		"/C/Users/66826/repo/clock/style.css",
+		"/C/Users/66826/repo/clock/index.html",
+		"/C/Users/66826/repo/clock/clock.js",
+		"/C/Users/66826/repo/menu/index.html",
+		"/C/Users/66826/repo/menu/components/menu.js",
+		"/C/Users/66826/repo/components_chat_1310_2130/components/star-rating/star-rating.js",
+		"/C/Users/66826/repo/components_chat_1310_2130/components/star-rating/star-rating.html",
+		"/C/Users/66826/repo/components_chat_1310_2130/components/star-rating/star-rating.css",
+		"/C/Users/66826/repo/menu/menu.js",
+		"/C/Users/66826/repo/menu_js/index.html",
+		"/C/Users/66826/repo/menu_js/style.css",
+		"/C/Users/66826/less_compile_node/index.html",
+		"/C/Users/66826/www/index.html",
+		"/C/Users/66826/Desktop/обучение/less/компиляция less в css через node.jpg",
+		"/C/Users/66826/Desktop/обучение/less/компиляция less в css через node.js",
+		"/C/Users/66826/www/less/style_th1.less",
+		"/C/Users/66826/www/less/style_th2.less",
+		"/C/Users/66826/www/less/style_th2.css",
+		"/C/Users/66826/www/css/css-styles.th1.css",
+		"/C/Users/66826/www/less/style_th1.css",
+		"/C/Users/66826/Desktop/обучение/parallax/parallax/css/style.css",
+		"/C/Users/66826/Desktop/index.php",
+		"/C/Users/66826/Desktop/style.css",
+		"/F/home/test.less/www/index.html",
+		"/F/home/test.less/www/less/style_th1.less",
+		"/F/home/test.less/www/less/style_th2.less",
+		"/F/home/test.less/www/css/style_th2.css",
+		"/F/home/test.less/www/css/style_th1.css",
+		"/F/home/test.less/www/css/css-styles.th1.css",
+		"/F/home/test.less/www/css/styles_th1.css",
+		"/C/Users/66826/liquid-market-html/style.css",
+		"/C/Users/66826/Desktop/backup/17-07_2/style.css",
+		"/C/Users/66826/Desktop/backup/17-07_2/details.html",
+		"/C/Users/66826/Desktop/test.html",
+		"/C/Users/66826/liquid-market-html/details.html",
+		"/F/home/test.details/www/style.css",
+		"/F/home/test.details/www/details.html",
+		"/C/Users/66826/liquid-market-html/index.html",
+		"/C/Users/66826/liquid-market-html/payment1.html",
+		"/F/home/test.details/www/index.html",
+		"/F/home/test.payment/www/style.css",
+		"/F/home/test.payment/www/index.html",
+		"/F/home/test.payment/www/payment2.html",
+		"/F/home/test.payment/www/css/style.css",
+		"/C/Users/66826/liquid-market-html/index1.html",
+		"/C/Users/66826/liquid-market-html/style1.css",
+		"/C/Users/66826/Desktop/test/crowd/index.html",
+		"/C/Users/66826/Desktop/test/crowd/style.css",
+		"/F/home/test.bootstrap/www/gallery.html",
+		"/F/home/test.bootstrap/www/style_boot.css",
+		"/C/Users/66826/Desktop/landing page/Progressus/index.html",
+		"/C/Users/66826/Desktop/landing page/startbootstrap-agency-gh-pages/index.html",
+		"/F/home/test.barber/www/index.html",
+		"/F/home/test.barber/www/js/trufel.min.js",
+		"/F/home/test.barber/www/css/style.css",
+		"/F/home/test.truffel/www/css/style_custom.css",
+		"/F/home/test.truffel/www/css/style.css",
+		"/F/home/test.truffel/www/index.html",
+		"/F/home/test.shops/www/style_new.css",
+		"/F/home/test.shops/www/index.html",
+		"/F/home/test.shops/www/js/script_fig.js",
+		"/F/home/test.shops/www/js/script.js",
+		"/F/home/test.music/www/right.html",
+		"/F/home/test.mbc/www/index.html",
+		"/F/home/test.mbc/www/css/style.css",
+		"/F/home/test.js/www/index.html",
+		"/C/Users/66826/Desktop/mbc/MBC/css/style.css",
+		"/C/Users/66826/Desktop/mbc/MBC/index.html",
+		"/C/Users/66826/AppData/Local/Temp/Temp1_MMC-20170626T172233Z-001.zip/MMC/js/script.js",
+		"/C/Users/66826/AppData/Local/Temp/Temp1_MMC-20170626T172233Z-001.zip/MMC/css/style.css",
+		"/F/home/test.landing/www/main.css",
+		"/F/home/test.landing/www/index.html",
+		"/F/home/test.landing/www/assets/css/main.css",
+		"/C/Users/66826/AppData/Local/Temp/style.css",
+		"/C/Users/66826/AppData/Local/Temp/assetoverview_test-1.html",
+		"/C/Users/66826/AppData/Local/Temp/assetoverview_test.html",
+		"/F/home/test.js/www/script.js",
+		"/C/Users/66826/Desktop/обучение/parallax/parallax/js/parallax.js",
+		"/C/Users/66826/Desktop/обучение/parallax/parallax/index.html",
+		"/C/Users/66826/AppData/Local/Temp/v1chp1.html",
+		"/C/Users/66826/Desktop/обучение/parallax/3 урок/parallax/index.html",
+		"/C/Users/66826/Desktop/обучение/parallax/3 урок/parallax/style.css",
+		"/F/home/test.truffel/www/js/contact_me.js",
+		"/F/home/test.truffel/www/js/jqBootstrapValidation.js",
+		"/F/home/test.truffel/www/mail/contact_me.php",
+		"/F/home/test.truffel/www/gulpfile.js",
+		"/D/home/test.js/www/script.js",
+		"/E/home/test.truffel/www/css/style.css",
+		"/E/home/test.js/www/index.html",
+		"/E/home/test.truffel/www/index.html",
+		"/E/home/test.js/www/script.js",
+		"/C/Users/66826/Desktop/сайт/backup/denwer/reg+auth/lib/classModules.php",
+		"/F/home/test.spb/www/lib/classRegContent.php",
+		"/C/Users/66826/Desktop/сайт/backup/denwer/reg+auth/functions.php",
+		"/F/home/test.spb/www/lib/classRegManage.php",
+		"/C/Users/66826/Desktop/сайт/backup/СПб/22.01.2017/public_html/lib/classArticleContent.php",
+		"/C/Users/66826/Desktop/сайт/backup/СПб/22.01.2017/public_html/lib/classModules.php",
+		"/C/Users/66826/Desktop/avaya_or_analog.php",
+		"/C/Users/66826/Desktop/сайт/backup/СПб/06.02.2017/public_html/lib/articlesClass.php",
+		"/C/Users/66826/Desktop/сайт/backup/СПб/06.02.2017/public_html/lib/classModules.php",
+		"/C/Users/66826/Desktop/сайт/Hermitage.php",
+		"/C/Users/66826/Desktop/сайт/transport_spb.php",
+		"/C/Users/66826/Desktop/сайт/backup/test/22.12/public_html/lib/classModules.php",
+		"/C/Users/66826/Desktop/сайт/backup/test/07.01/public_html/lib/classArticleContent.php",
+		"/C/Users/66826/Desktop/сайт/backup/test/09.01/public_html/lib/classArticleContent.php",
+		"/C/Users/66826/Desktop/сайт/backup/test/09.01/public_html/lib/classHomePageContent.php",
+		"/C/Users/66826/Desktop/сайт/backup/test/09.01/public_html/lib/classModules.php",
+		"/C/Users/66826/Desktop/сайт/backup/autoelektric/17.02/public_html/lib/classServiceContent.php",
+		"/C/Users/66826/Desktop/сайт/backup/test/07.01/public_html/lib/classModules.php",
+		"/C/Users/66826/Desktop/сайт/backup/autoelektric/17.02/public_html/lib/classModules.php",
+		"/C/Users/66826/Desktop/сайт/backup/denwer/reg+auth/lib/usersClass.php",
+		"/C/Users/66826/Desktop/сайт/backup/test/09.01/public_html/lib/classSectionContent.php",
+		"/C/Users/66826/Desktop/сайт/backup/autoelektric/20.02/public_html/lib/classConfig.php",
+		"/C/Users/66826/Desktop/сайт/backup/Protaras/public_html/forum/index.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/66826/repo/trainingChat/components/chat/chat.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "form.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
