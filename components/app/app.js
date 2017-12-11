@@ -26,8 +26,7 @@ export class App{
   					chat.messages = dataArr;
   					chat.render();
 				});
-				//https://components-1601-1930.firebaseio.com/chat/messages.json
-				xhr.open('GET', 'https://mychat2130.firebaseio.com/', true);
+				xhr.open('GET', 'https://components-1601-1930.firebaseio.com/chat/messages.json', true);
 				xhr.send();
 			},
 			messages:[]
