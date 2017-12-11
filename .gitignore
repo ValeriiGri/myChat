@@ -58,5 +58,5 @@ typings/
 .env
 
 #sublime
-.sublime-workspace
+*.sublime-workspace
 
