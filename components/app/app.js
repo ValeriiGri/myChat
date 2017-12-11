@@ -8,31 +8,22 @@ export class App{
 
 		let chat = new Chat({
 			el:document.createElement('div'),
-			messages:[
-				{
-					avatar:'avatar',
-					hours:'21',
-					mins:'00',
-					sender:'sender_1:',
-					messageText:'first message'
-				},
+			getMessages:function(){
+				let xhr = new XMLHttpRequest();
 
-				{
-					avatar:'avatar',
-					hours:'21',
-					mins:'00',
-					sender:'sender_2:',
-					messageText:'first message'
-				},
+				xhr.addEventListener('readystatechange',function(event) {
+  					if (xhr.readyState !== 4 || xhr.status !== 200){
+  						return;
+  					}
+  					const data =  JSON.parse(xhr.responseText);
+  					chat.messages = data;
+  					chat.render();
+				});
 
-				{
-					avatar:'avatar',
-					hours:'21',
-					mins:'00',
-					sender:'sender_1:',
-					messageText:'second message'
-				}
-			]
+				xhr.open('GET', 'data/messages.json', true);
+				xhr.send();
+			},
+			messages:[]
 		});
 
 		let form = new Form({

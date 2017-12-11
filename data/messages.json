@@ -1,0 +1,18 @@
+
+[
+	{
+		"avatar":"avatar",
+		"hours":"21",
+		"mins":"00",
+		"sender":"sender_1:",
+		"messageText":"first message"
+	},
+
+	{
+		"avatar":"avatar",
+		"hours":"21",
+		"mins":"00",
+		"sender":"sender_1:",
+		"messageText":"first message"
+	}
+]
