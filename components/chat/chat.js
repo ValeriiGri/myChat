@@ -23,7 +23,9 @@ export class Chat{
 							return `
 								<li class="chat__messages__msg">
 									<div class="chat__messages__msg__avatar"></div>
-									<div class="chat__messages__msg__time">${new Date(date).getHours()}:${new Date(date).getMinutes()}</div>
+									<div class="chat__messages__msg__time">
+										${new Date(date).getHours()}:${new Date(date).getMinutes()}
+									</div>
 									<div>
 										<span class="chat__messages__msg__sender">${name}:</span>
 										<span class="chat__messages__msg__text">${text}</span>
@@ -37,5 +39,8 @@ export class Chat{
 							<div class="chat__header">Chat header</div>
 							<ul class="chat__messages">${messagesHTML}</ul>
 							`;
+	}
+	newArrayToApp(){
+		return this.messages;
 	}
 }
