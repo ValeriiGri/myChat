@@ -54,10 +54,7 @@ export class App{
 				chat.render();
 			},
 			writeMessage:function(){
-				let body={};
 				let addedMessage = chat.newArrayToApp();
-				//let keyObj;
-				console.log(addedMessage);
 
 				function makeKey(){
 				    let text = "";
