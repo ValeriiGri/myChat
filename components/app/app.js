@@ -20,14 +20,14 @@ export class App{
   					let dataArr = [];
 
   					for(let key in data){
-  						dataArr.push(data[key]);
+  						dataArr.unshift(data[key]);
   					}
 
   					chat.messages = dataArr;
   					chat.render();
 				});
 
-				xhr.open('GET', 'https://components-1601-1930.firebaseio.com/chat/messages.json', true);
+				xhr.open('GET', 'https://mychat2130.firebaseio.com/messages.json', true);
 				xhr.send();	
 			},
 			messages:[]
@@ -55,10 +55,11 @@ export class App{
 			},
 			writeMessage:function(){
 				let body={};
-				let arrRez = chat.newArrayToApp();
-				let boundary;
+				let addedMessage = chat.newArrayToApp();
+				//let keyObj;
+				console.log(addedMessage);
 
-				function makeBoundary(){
+				function makeKey(){
 				    let text = "";
 				    let possible = "abcdefghijklmnopqrstuvwxyz";
 
@@ -69,30 +70,15 @@ export class App{
 				    return text;
 				}			
 
-				for(let item of arrRez){
-					boundary = makeBoundary();
-					let key = boundary;
-					body[key] = item;
-				}
-				
-
-				// let boundaryMiddle = '--' + boundary + '\r\n';
-				// let boundaryLast = '--' + boundary + '--\r\n';
-				// let body = ['\r\n'];
-
-				// for(let key in data){
-				// 	body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + data[key] + '\r\n');
-				// } 
-
-				// body = body.join(boundaryMiddle) + boundaryLast;
-
 				let xhr = new XMLHttpRequest();
 				
-				xhr.open('POST', 'https://components-1601-1930.firebaseio.com/chat/messages.json', true);
+				xhr.open('POST', 'https://mychat2130.firebaseio.com/messages.json', true);
 
-				xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary='+'-');
+				xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=');
 				
-				xhr.send(body);
+				xhr.send(JSON.stringify(addedMessage));
+
+				chat.render();
 			}
 		});
 

@@ -41,6 +41,6 @@ export class Chat{
 							`;
 	}
 	newArrayToApp(){
-		return this.messages;
+		return this.messages[0];
 	}
 }
