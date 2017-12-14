@@ -8,23 +8,11 @@ export class Chat{
 	render(){
 
 		let messagesHTML = this.messages.map(function({date,name,text}){
-			if(name == 'me'){
-				return `
-						<li class="chat__messages__msg_my">
-							<div class="chat__messages__msg__avatar"></div>
-							<div class="chat__messages__msg__time">${date[0]}:${date[1]}</div>
-							<div>
-								<span class="chat__messages__msg__sender">${name}:</span>
-								<span class="chat__messages__msg__text_my">${text}</span>
-							</div>
-						</li>
-						`;
-						}else{
 							return `
 								<li class="chat__messages__msg">
 									<div class="chat__messages__msg__avatar"></div>
 									<div class="chat__messages__msg__time">
-										${new Date(date).getHours()}:${new Date(date).getMinutes()}
+										${date[0]}:${date[1]} - ${date[2]}.${date[3]}
 									</div>
 									<div>
 										<span class="chat__messages__msg__sender">${name}:</span>
@@ -32,7 +20,6 @@ export class Chat{
 									</div>
 								</li>
 							`;	
-						}
 					}).join('');
 
 		this.el.innerHTML = `

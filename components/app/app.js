@@ -36,18 +36,20 @@ export class App{
 		let form = new Form({
 			el:document.createElement('div'),
 			existMessages:{},
-			onSubmit:function(message){
+			onSubmit:function(message,nickName){
 					
 					let time = new Date();
 					let hours = time.getHours();
 					let mins = time.getMinutes();
+					let day = time.getDate();
+					let month = time.getMonth()+1;
 					
 					if(hours<10) hours ='0' + hours;
 					if(mins<10) mins ='0'+ mins;
 
 					chat.messages.unshift({
-						date:[hours,mins],
-						name:'me',
+						date:[hours,mins,day,month],
+						name:nickName,
 						text:message
 					});
 
@@ -55,17 +57,6 @@ export class App{
 			},
 			writeMessage:function(){
 				let addedMessage = chat.newArrayToApp();
-
-				function makeKey(){
-				    let text = "";
-				    let possible = "abcdefghijklmnopqrstuvwxyz";
-
-				    for( let i=0; i < 19; i++ ){
-				        text += possible.charAt(Math.floor(Math.random() * possible.length));
-				    }
-
-				    return text;
-				}			
 
 				let xhr = new XMLHttpRequest();
 				
