@@ -1,10 +1,12 @@
 
 import {Chat} from './../chat/chat.js';
 import {Form} from './../form/form.js';
+import {user} from './../user/user.js';
 
 export class App{
 	constructor({el}){
 		this.el = el;
+		this.nickName = user.getName();
 
 		let chat = new Chat({
 			el:document.createElement('div'),
@@ -36,6 +38,7 @@ export class App{
 		let form = new Form({
 			el:document.createElement('div'),
 			existMessages:{},
+			nickName:this.nickName,
 			onSubmit:function(message,nickName){
 					
 					let time = new Date();
