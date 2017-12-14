@@ -67,10 +67,12 @@ form{
 	justify-content:space-between;
 	min-height: 400px;
 	height: 450px;
-	width:100%;
+	width:50%;
 	border-style: none;
 	overflow-wrap:break-word;
 	box-shadow: inset 0 0 11px green;
+	margin-left:25%;
 }
+
 
 
