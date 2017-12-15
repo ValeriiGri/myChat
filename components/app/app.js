@@ -3,7 +3,7 @@ import {Chat} from './../chat/chat.js';
 import {Form} from './../form/form.js';
 import {user} from './../user/user.js';
 
-export class App{
+class App{
 	constructor({el}){
 		this.el = el;
 		this.nickName = user.getName();
@@ -85,3 +85,7 @@ export class App{
 	}
 
 }
+
+new App({
+		el:document.querySelector('.js-app')
+	});
