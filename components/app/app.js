@@ -74,7 +74,9 @@ class App{
 		});
 
 		//insert divs in js-app
-		this.el.append(chat.el,form.el);
+		//append is not work in IE, I had to use appendChild
+		this.el.appendChild(chat.el);
+		this.el.appendChild(form.el);
 		//add classes to divs
 		document.querySelector('.js-app>div').classList.add('chat');
 		document.querySelector('.js-app>div:last-child').classList.add('form');

@@ -65,99 +65,102 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chat_chat_js__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__form_form_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_user_js__ = __webpack_require__(3);
 
 
+var _chat = __webpack_require__(1);
 
+var _form = __webpack_require__(2);
 
+var _user = __webpack_require__(3);
 
-class App {
-		constructor({ el }) {
-				this.el = el;
-				this.nickName = __WEBPACK_IMPORTED_MODULE_2__user_user_js__["a" /* user */].getName();
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-				let chat = new __WEBPACK_IMPORTED_MODULE_0__chat_chat_js__["a" /* Chat */]({
-						el: document.createElement('div'),
-						getMessages: function () {
-								let xhr = new XMLHttpRequest();
+var App = function App(_ref) {
+		var el = _ref.el;
 
-								xhr.addEventListener('readystatechange', function (event) {
-										if (xhr.readyState !== 4 || xhr.status !== 200) {
-												return;
-										}
-										const data = JSON.parse(xhr.responseText);
+		_classCallCheck(this, App);
 
-										let dataArr = [];
+		this.el = el;
+		this.nickName = _user.user.getName();
 
-										for (let key in data) {
-												dataArr.unshift(data[key]);
-										}
+		var chat = new _chat.Chat({
+				el: document.createElement('div'),
+				getMessages: function getMessages() {
+						var xhr = new XMLHttpRequest();
 
-										chat.messages = dataArr;
-										chat.render();
-								});
+						xhr.addEventListener('readystatechange', function (event) {
+								if (xhr.readyState !== 4 || xhr.status !== 200) {
+										return;
+								}
+								var data = JSON.parse(xhr.responseText);
 
-								xhr.open('GET', 'https://mychat2130.firebaseio.com/messages.json', true);
-								xhr.send();
-						},
-						messages: []
-				});
+								var dataArr = [];
 
-				let form = new __WEBPACK_IMPORTED_MODULE_1__form_form_js__["a" /* Form */]({
-						el: document.createElement('div'),
-						existMessages: {},
-						nickName: this.nickName,
-						onSubmit: function (message, nickName) {
+								for (var key in data) {
+										dataArr.unshift(data[key]);
+								}
 
-								let time = new Date();
-								let hours = time.getHours();
-								let mins = time.getMinutes();
-								let day = time.getDate();
-								let month = time.getMonth() + 1;
-
-								if (hours < 10) hours = '0' + hours;
-								if (mins < 10) mins = '0' + mins;
-
-								chat.messages.unshift({
-										date: [hours, mins, day, month],
-										name: nickName,
-										text: message
-								});
-
+								chat.messages = dataArr;
 								chat.render();
-						},
-						writeMessage: function () {
-								let addedMessage = chat.newArrayToApp();
+						});
 
-								let xhr = new XMLHttpRequest();
+						xhr.open('GET', 'https://mychat2130.firebaseio.com/messages.json', true);
+						xhr.send();
+				},
+				messages: []
+		});
 
-								xhr.open('POST', 'https://mychat2130.firebaseio.com/messages.json', true);
+		var form = new _form.Form({
+				el: document.createElement('div'),
+				existMessages: {},
+				nickName: this.nickName,
+				onSubmit: function onSubmit(message, nickName) {
 
-								xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=');
+						var time = new Date();
+						var hours = time.getHours();
+						var mins = time.getMinutes();
+						var day = time.getDate();
+						var month = time.getMonth() + 1;
 
-								xhr.send(JSON.stringify(addedMessage));
+						if (hours < 10) hours = '0' + hours;
+						if (mins < 10) mins = '0' + mins;
 
-								chat.render();
-						}
-				});
+						chat.messages.unshift({
+								date: [hours, mins, day, month],
+								name: nickName,
+								text: message
+						});
 
-				//insert divs in js-app
-				this.el.append(chat.el, form.el);
-				//add classes to divs
-				document.querySelector('.js-app>div').classList.add('chat');
-				document.querySelector('.js-app>div:last-child').classList.add('form');
+						chat.render();
+				},
+				writeMessage: function writeMessage() {
+						var addedMessage = chat.newArrayToApp();
 
-				chat.render();
-				form.render();
-		}
+						var xhr = new XMLHttpRequest();
 
-}
+						xhr.open('POST', 'https://mychat2130.firebaseio.com/messages.json', true);
+
+						xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=');
+
+						xhr.send(JSON.stringify(addedMessage));
+
+						chat.render();
+				}
+		});
+
+		//insert divs in js-app
+		this.el.appendChild(chat.el);
+		this.el.appendChild(form.el);
+		//add classes to divs
+		document.querySelector('.js-app>div').classList.add('chat');
+		document.querySelector('.js-app>div:last-child').classList.add('form');
+
+		chat.render();
+		form.render();
+};
 
 new App({
 		el: document.querySelector('.js-app')
@@ -165,52 +168,80 @@ new App({
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-class Chat {
-	constructor({ el, messages, getMessages }) {
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Chat = exports.Chat = function () {
+	function Chat(_ref) {
+		var el = _ref.el,
+		    messages = _ref.messages,
+		    getMessages = _ref.getMessages;
+
+		_classCallCheck(this, Chat);
+
 		this.el = el;
 		this.messages = messages;
 		getMessages();
 	}
 
-	render() {
+	_createClass(Chat, [{
+		key: 'render',
+		value: function render() {
 
-		let messagesHTML = this.messages.map(function ({ date, name, text }) {
-			return `
-								<li class="chat__messages__msg">
-									<div class="chat__messages__msg__avatar"></div>
-									<div class="chat__messages__msg__time">
-										${date[0]}:${date[1]} - ${date[2]}.${date[3]}
-									</div>
-									<div>
-										<span class="chat__messages__msg__sender">${name}:</span>
-										<span class="chat__messages__msg__text">${text}</span>
-									</div>
-								</li>
-							`;
-		}).join('');
+			var messagesHTML = this.messages.map(function (_ref2) {
+				var date = _ref2.date,
+				    name = _ref2.name,
+				    text = _ref2.text;
 
-		this.el.innerHTML = `
-							<div class="chat__header">Chat header</div>
-							<ul class="chat__messages">${messagesHTML}</ul>
-							`;
-	}
-	newArrayToApp() {
-		return this.messages[0];
-	}
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Chat;
+				return '\n\t\t\t\t\t\t\t\t<li class="chat__messages__msg">\n\t\t\t\t\t\t\t\t\t<div class="chat__messages__msg__avatar"></div>\n\t\t\t\t\t\t\t\t\t<div class="chat__messages__msg__time">\n\t\t\t\t\t\t\t\t\t\t' + date[0] + ':' + date[1] + ' - ' + date[2] + '.' + date[3] + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t<span class="chat__messages__msg__sender">' + name + ':</span>\n\t\t\t\t\t\t\t\t\t\t<span class="chat__messages__msg__text">' + text + '</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t';
+			}).join('');
 
+			this.el.innerHTML = '\n\t\t\t\t\t\t\t<div class="chat__header">Chat header</div>\n\t\t\t\t\t\t\t<ul class="chat__messages">' + messagesHTML + '</ul>\n\t\t\t\t\t\t\t';
+		}
+	}, {
+		key: 'newArrayToApp',
+		value: function newArrayToApp() {
+			return this.messages[0];
+		}
+	}]);
+
+	return Chat;
+}();
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-class Form {
-	constructor({ el, onSubmit, writeMessage, nickName }) {
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Form = exports.Form = function () {
+	function Form(_ref) {
+		var el = _ref.el,
+		    onSubmit = _ref.onSubmit,
+		    writeMessage = _ref.writeMessage,
+		    nickName = _ref.nickName;
+
+		_classCallCheck(this, Form);
+
 		this.el = el;
 		this.onSubmit = onSubmit;
 		this.writeMessage = writeMessage;
@@ -219,48 +250,63 @@ class Form {
 		this.el.addEventListener('submit', this.eventListener.bind(this));
 	}
 
-	eventListener(event) {
-		event.preventDefault();
+	_createClass(Form, [{
+		key: 'eventListener',
+		value: function eventListener(event) {
+			event.preventDefault();
 
-		let target = event.target;
+			var target = event.target;
 
-		let newMessage = target.querySelector('textarea').value;
+			var newMessage = target.querySelector('textarea').value;
 
-		this.onSubmit(newMessage, this.nickName);
-		this.writeMessage();
-	}
+			this.onSubmit(newMessage, this.nickName);
+			this.writeMessage();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			this.el.innerHTML = '\n\t\t\t\t\t\t\t<form>\n\t\t\t\t\t\t\t\t<textarea placeholder="Type a message here"></textarea>\n\t\t\t\t\t\t\t\t<input type="submit" class="form__sendBtn" value="send">\n\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t\t';
+		}
+	}]);
 
-	render() {
-		this.el.innerHTML = `
-							<form>
-								<textarea placeholder="Type a message here"></textarea>
-								<input type="submit" class="form__sendBtn" value="send">
-							</form>
-							`;
-	}
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Form;
-
+	return Form;
+}();
 
 /***/ }),
 /* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return user; });
-class User {
-	constructor() {}
 
-	getName() {
-		let nickName = prompt("Enter your name if you don't want be Anonymous ", 'Anonymous');
-		if (nickName == null) {
-			return 'Anonymous';
-		}
-		return nickName;
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var User = function () {
+	function User() {
+		_classCallCheck(this, User);
 	}
-}
 
-let user = new User();
+	_createClass(User, [{
+		key: 'getName',
+		value: function getName() {
+			var nickName = prompt("Enter your name if you don't want be Anonymous ", 'Anonymous');
+			if (nickName == null) {
+				return 'Anonymous';
+			}
+			return nickName;
+		}
+	}]);
+
+	return User;
+}();
+
+var user = exports.user = new User();
 
 /***/ })
 /******/ ]);
