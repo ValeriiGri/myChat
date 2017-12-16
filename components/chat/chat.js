@@ -1,11 +1,20 @@
 export class Chat{
-	constructor({el,messages,getMessages,name}){
+	constructor({el,messages,getMessages,name,onClick}){
 		this.el = el;
 		this.messages = messages;
 		this.name = name;
 		getMessages();
+		this.onClick = onClick;
+
+		this.el.addEventListener('click', this.eventListener.bind(this));
 
 	}
+
+	eventListener(event){
+		
+		this.onClick();
+
+	}	
 
 	render(){
 

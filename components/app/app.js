@@ -6,11 +6,16 @@ import {user} from './../user/user.js';
 class App{
 	constructor({el}){
 		this.el = el;
-		this.nickName = user.getName();
+		this.nickName = 'Anonymous';//nickName by default
 
 		let chat = new Chat({
 			el:document.createElement('div'),
 			name:this.nickName,
+			onClick:function(){
+				let newUser = user.getName();//by clicking on button "set nick name" execute user.getName
+				chat.name = newUser;//update name
+				chat.render();
+			},
 			getMessages:function(){
 				let xhr = new XMLHttpRequest();
 
@@ -39,8 +44,7 @@ class App{
 		let form = new Form({
 			el:document.createElement('div'),
 			existMessages:{},
-			nickName:this.nickName,
-			onSubmit:function(message,nickName){
+			onSubmit:function(message){
 					
 					let time = new Date();
 					let hours = time.getHours();
@@ -51,9 +55,9 @@ class App{
 					if(hours<10) hours ='0' + hours;
 					if(mins<10) mins ='0'+ mins;
 
-					chat.messages.unshift({
+					chat.messages.unshift({			//by submitting form - add data in array messages
 						date:[hours,mins,day,month],
-						name:nickName,
+						name:chat.name,
 						text:message
 					});
 

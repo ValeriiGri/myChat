@@ -84,11 +84,16 @@ var App = function App(_ref) {
 		_classCallCheck(this, App);
 
 		this.el = el;
-		this.nickName = _user.user.getName();
+		this.nickName = 'Anonymous'; //nickName by default
 
 		var chat = new _chat.Chat({
 				el: document.createElement('div'),
 				name: this.nickName,
+				onClick: function onClick() {
+						var newUser = _user.user.getName(); //by clicking on button "set nick name" execute user.getName
+						chat.name = newUser; //update name
+						chat.render();
+				},
 				getMessages: function getMessages() {
 						var xhr = new XMLHttpRequest();
 
@@ -117,8 +122,7 @@ var App = function App(_ref) {
 		var form = new _form.Form({
 				el: document.createElement('div'),
 				existMessages: {},
-				nickName: this.nickName,
-				onSubmit: function onSubmit(message, nickName) {
+				onSubmit: function onSubmit(message) {
 
 						var time = new Date();
 						var hours = time.getHours();
@@ -129,9 +133,9 @@ var App = function App(_ref) {
 						if (hours < 10) hours = '0' + hours;
 						if (mins < 10) mins = '0' + mins;
 
-						chat.messages.unshift({
+						chat.messages.unshift({ //by submitting form - add data in array messages
 								date: [hours, mins, day, month],
-								name: nickName,
+								name: chat.name,
 								text: message
 						});
 
@@ -188,7 +192,8 @@ var Chat = exports.Chat = function () {
 		var el = _ref.el,
 		    messages = _ref.messages,
 		    getMessages = _ref.getMessages,
-		    name = _ref.name;
+		    name = _ref.name,
+		    onClick = _ref.onClick;
 
 		_classCallCheck(this, Chat);
 
@@ -196,9 +201,18 @@ var Chat = exports.Chat = function () {
 		this.messages = messages;
 		this.name = name;
 		getMessages();
+		this.onClick = onClick;
+
+		this.el.addEventListener('click', this.eventListener.bind(this));
 	}
 
 	_createClass(Chat, [{
+		key: 'eventListener',
+		value: function eventListener(event) {
+
+			this.onClick();
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 
@@ -241,15 +255,14 @@ var Form = exports.Form = function () {
 	function Form(_ref) {
 		var el = _ref.el,
 		    onSubmit = _ref.onSubmit,
-		    writeMessage = _ref.writeMessage,
-		    nickName = _ref.nickName;
+		    writeMessage = _ref.writeMessage;
 
 		_classCallCheck(this, Form);
 
 		this.el = el;
 		this.onSubmit = onSubmit;
 		this.writeMessage = writeMessage;
-		this.nickName = nickName;
+		//this.nickName = nickName;
 
 		this.el.addEventListener('submit', this.eventListener.bind(this));
 	}
@@ -263,7 +276,7 @@ var Form = exports.Form = function () {
 
 			var newMessage = target.querySelector('textarea').value;
 
-			this.onSubmit(newMessage, this.nickName);
+			this.onSubmit(newMessage /*,this.nickName*/);
 			this.writeMessage();
 		}
 	}, {
@@ -299,7 +312,7 @@ var User = function () {
 	_createClass(User, [{
 		key: 'getName',
 		value: function getName() {
-			var nickName = prompt("Enter your name if you don't want be Anonymous ", 'Anonymous');
+			var nickName = prompt("Enter your name if you don't want to be Anonymous ", 'Anonymous');
 			if (nickName == null) {
 				return 'Anonymous';
 			}

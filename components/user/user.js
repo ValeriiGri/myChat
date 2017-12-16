@@ -3,7 +3,7 @@ class User{
 	}
 
 	getName(){
-		let nickName = prompt("Enter your name if you don't want be Anonymous ", 'Anonymous');
+		let nickName = prompt("Enter your name if you don't want to be Anonymous ", 'Anonymous');
 		if(nickName == null){
 			return 'Anonymous';
 		}
