@@ -209,8 +209,11 @@ var Chat = exports.Chat = function () {
 	_createClass(Chat, [{
 		key: 'eventListener',
 		value: function eventListener(event) {
+			var target = event.target;
 
-			this.onClick();
+			if (target.tagName == 'INPUT') {
+				this.onClick();
+			}
 		}
 	}, {
 		key: 'render',

@@ -11,8 +11,12 @@ export class Chat{
 	}
 
 	eventListener(event){
+		let target = event.target;
 		
-		this.onClick();
+		if(target.tagName == 'INPUT'){
+			this.onClick();
+		}
+		
 
 	}	
 
