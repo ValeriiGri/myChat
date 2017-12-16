@@ -1,8 +1,10 @@
 export class Chat{
-	constructor({el,messages,getMessages}){
+	constructor({el,messages,getMessages,name}){
 		this.el = el;
 		this.messages = messages;
+		this.name = name;
 		getMessages();
+
 	}
 
 	render(){
@@ -23,7 +25,10 @@ export class Chat{
 					}).join('');
 
 		this.el.innerHTML = `
-							<div class="chat__header">Chat header</div>
+							<div class="chat__header">
+								<span>You are as "${this.name}" here</span>
+								<input type="button" class="chat__header__btn" value="set your nick name">
+							</div>
 							<ul class="chat__messages">${messagesHTML}</ul>
 							`;
 	}

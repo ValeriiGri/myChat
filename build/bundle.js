@@ -88,6 +88,7 @@ var App = function App(_ref) {
 
 		var chat = new _chat.Chat({
 				el: document.createElement('div'),
+				name: this.nickName,
 				getMessages: function getMessages() {
 						var xhr = new XMLHttpRequest();
 
@@ -152,6 +153,7 @@ var App = function App(_ref) {
 		});
 
 		//insert divs in js-app
+		//append is not work in IE, I had to use appendChild
 		this.el.appendChild(chat.el);
 		this.el.appendChild(form.el);
 		//add classes to divs
@@ -185,12 +187,14 @@ var Chat = exports.Chat = function () {
 	function Chat(_ref) {
 		var el = _ref.el,
 		    messages = _ref.messages,
-		    getMessages = _ref.getMessages;
+		    getMessages = _ref.getMessages,
+		    name = _ref.name;
 
 		_classCallCheck(this, Chat);
 
 		this.el = el;
 		this.messages = messages;
+		this.name = name;
 		getMessages();
 	}
 
@@ -206,7 +210,7 @@ var Chat = exports.Chat = function () {
 				return '\n\t\t\t\t\t\t\t\t<li class="chat__messages__msg">\n\t\t\t\t\t\t\t\t\t<div class="chat__messages__msg__avatar"></div>\n\t\t\t\t\t\t\t\t\t<div class="chat__messages__msg__time">\n\t\t\t\t\t\t\t\t\t\t' + date[0] + ':' + date[1] + ' - ' + date[2] + '.' + date[3] + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t<span class="chat__messages__msg__sender">' + name + ':</span>\n\t\t\t\t\t\t\t\t\t\t<span class="chat__messages__msg__text">' + text + '</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t';
 			}).join('');
 
-			this.el.innerHTML = '\n\t\t\t\t\t\t\t<div class="chat__header">Chat header</div>\n\t\t\t\t\t\t\t<ul class="chat__messages">' + messagesHTML + '</ul>\n\t\t\t\t\t\t\t';
+			this.el.innerHTML = '\n\t\t\t\t\t\t\t<div class="chat__header">\n\t\t\t\t\t\t\t\t<span>You are as "' + this.name + '" here</span>\n\t\t\t\t\t\t\t\t<input type="button" class="chat__header__btn" value="set your nick name">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<ul class="chat__messages">' + messagesHTML + '</ul>\n\t\t\t\t\t\t\t';
 		}
 	}, {
 		key: 'newArrayToApp',

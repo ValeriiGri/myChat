@@ -10,6 +10,7 @@ class App{
 
 		let chat = new Chat({
 			el:document.createElement('div'),
+			name:this.nickName,
 			getMessages:function(){
 				let xhr = new XMLHttpRequest();
 
