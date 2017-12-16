@@ -1,5 +1,5 @@
 # myChat
 graduation project
 
-# link(except IE, I hope will soon) 
+# link 
 https://valeriigri.github.io/myChat/
