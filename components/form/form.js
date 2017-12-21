@@ -1,9 +1,8 @@
 export class Form{
-	constructor({el,onSubmit,writeMessage/*nickName*/}){
+	constructor({el,onSubmit,writeMessage}){
 		this.el = el;
 		this.onSubmit = onSubmit;
 		this.writeMessage = writeMessage;
-		//this.nickName = nickName;
 
 		this.el.addEventListener('submit', this.eventListener.bind(this));
 							
@@ -16,7 +15,7 @@ export class Form{
 
 		let newMessage = target.querySelector('textarea').value;
 
-		this.onSubmit(newMessage/*,this.nickName*/); 
+		this.onSubmit(newMessage); 
 		this.writeMessage();
 	}	
 

@@ -1,20 +1,21 @@
 
 import {Chat} from './../chat/chat.js';
 import {Form} from './../form/form.js';
-import {user} from './../user/user.js';
+import {User} from './../user/user.js';
 
 class App{
-	constructor({el}){
+	constructor({el,elModal}){
 		this.el = el;
+		this.elModal = elModal;
 		this.nickName = 'Anonymous';//nickName by default
 
 		let chat = new Chat({
 			el:document.createElement('div'),
 			name:this.nickName,
-			onClick:function(){
-				let newUser = user.getName();//by clicking on button "set nick name" execute user.getName
-				chat.name = newUser;//update name
-				chat.render();
+			elModal:this.elModal, //for onClick method through chat component
+			onClick:function(elModal){
+				elModal.style.transform = 'translateY(500px)';
+				elModal.style.transitionDuration = '1s';
 			},
 			getMessages:function(){
 				let xhr = new XMLHttpRequest();
@@ -44,7 +45,7 @@ class App{
 		let form = new Form({
 			el:document.createElement('div'),
 			existMessages:{},
-			onSubmit:function(message){
+			onSubmit:function(message){			//onSubmit for message form
 					
 					let time = new Date();
 					let hours = time.getHours();
@@ -55,7 +56,7 @@ class App{
 					if(hours<10) hours ='0' + hours;
 					if(mins<10) mins ='0'+ mins;
 
-					chat.messages.unshift({			//by submitting form - add data in array messages
+					chat.messages.unshift({			//by submitting message form - add data in array messages
 						date:[hours,mins,day,month],
 						name:chat.name,
 						text:message
@@ -78,21 +79,34 @@ class App{
 			}
 		});
 
+		let user = new User({
+			el:document.createElement('form'),
+			elDivModal:this.elModal,
+			onSubmit:function(name){			//onSubmit for userName form
+				chat.name = name;
+				chat.render();
+			}
+		});
+
 		//insert divs in js-app
 		//append is not work in IE, I had to use appendChild
 		this.el.appendChild(chat.el);
 		this.el.appendChild(form.el);
+		this.elModal.appendChild(user.el);
 		//add classes to divs
 		document.querySelector('.js-app>div').classList.add('chat');
-		document.querySelector('.js-app>div:last-child').classList.add('form');
+		document.querySelector('.js-app>div:nth-child(2)').classList.add('form');
+		document.querySelector('.modal>form').classList.add('user-form');
 
 		chat.render();
 		form.render();
+		user.render();
 
 	}
 
 }
 
 new App({
-		el:document.querySelector('.js-app')
+		el:document.querySelector('.js-app'),
+		elModal:document.querySelector('.modal')
 	});

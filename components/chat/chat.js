@@ -1,6 +1,7 @@
 export class Chat{
-	constructor({el,messages,getMessages,name,onClick}){
+	constructor({el,elModal,messages,getMessages,name,onClick}){
 		this.el = el;
+		this.elModal = elModal;
 		this.messages = messages;
 		this.name = name;
 		getMessages();
@@ -14,10 +15,8 @@ export class Chat{
 		let target = event.target;
 		
 		if(target.tagName == 'INPUT'){
-			this.onClick();
-		}
-		
-
+			this.onClick(this.elModal);
+		}	
 	}	
 
 	render(){
@@ -40,7 +39,7 @@ export class Chat{
 		this.el.innerHTML = `
 							<div class="chat__header">
 								<span>You are as "${this.name}" here</span>
-								<input type="button" class="chat__header__btn" value="set your nick name">
+								<input type="button" class="chat__header__btn" value="Create your nickname">
 							</div>
 							<ul class="chat__messages">${messagesHTML}</ul>
 							`;
