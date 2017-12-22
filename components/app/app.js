@@ -102,8 +102,12 @@ class App{
 		form.render();
 		user.render();
 
+		//for updating chat messages when another user write message 
+		setInterval(function(){
+			let update = chat.getMessagesToApp();
+			update();
+		}, 3000);
 	}
-
 }
 
 new App({

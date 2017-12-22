@@ -4,11 +4,11 @@ export class Chat{
 		this.elModal = elModal;
 		this.messages = messages;
 		this.name = name;
-		getMessages();
+		this.getMessages = getMessages;
+		this.getMessages();
 		this.onClick = onClick;
 
 		this.el.addEventListener('click', this.eventListener.bind(this));
-
 	}
 
 	eventListener(event){
@@ -44,7 +44,13 @@ export class Chat{
 							<ul class="chat__messages">${messagesHTML}</ul>
 							`;
 	}
+
 	newArrayToApp(){
 		return this.messages[0];
+	}
+
+	//transfer function getMessages body to app
+	getMessagesToApp(){
+		return this.getMessages;
 	}
 }

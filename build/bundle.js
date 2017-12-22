@@ -182,6 +182,12 @@ var App = function App(_ref) {
 	chat.render();
 	form.render();
 	user.render();
+
+	//for updating chat messages when another user write message 
+	setInterval(function () {
+		var update = chat.getMessagesToApp();
+		update();
+	}, 3000);
 };
 
 new App({
@@ -219,7 +225,8 @@ var Chat = exports.Chat = function () {
 		this.elModal = elModal;
 		this.messages = messages;
 		this.name = name;
-		getMessages();
+		this.getMessages = getMessages;
+		this.getMessages();
 		this.onClick = onClick;
 
 		this.el.addEventListener('click', this.eventListener.bind(this));
@@ -252,6 +259,14 @@ var Chat = exports.Chat = function () {
 		key: 'newArrayToApp',
 		value: function newArrayToApp() {
 			return this.messages[0];
+		}
+
+		//transfer function getMessages body to app
+
+	}, {
+		key: 'getMessagesToApp',
+		value: function getMessagesToApp() {
+			return this.getMessages;
 		}
 	}]);
 
