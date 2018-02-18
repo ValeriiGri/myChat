@@ -103,7 +103,7 @@ class App{
 			onChange:function(avatar,el){			//onChange for avatar form
 				chat.avatarLink = avatar;
 				el.style.transform = 'translateY(-500px)';
-				el.style.transitionDuration = '1s'; 
+				el.style.transitionDuration = '2s'; 
 				chat.render();
 			}
 		});
@@ -135,10 +135,10 @@ class App{
 
 		//for updating chat messages when another user write message 
 		
-		// let id = setInterval(()=>{
-		// 	let update = chat.getMessagesToApp();
-		// 		update();
-		// },2000);
+		let id = setInterval(()=>{
+			let update = chat.getMessagesToApp();
+				update();
+		},2000);
 	}
 }
 new App({

@@ -219,10 +219,10 @@ var App = function App(_ref) {
 
 	//for updating chat messages when another user write message 
 
-	// let id = setInterval(()=>{
-	// 	let update = chat.getMessagesToApp();
-	// 		update();
-	// },2000);
+	var id = setInterval(function () {
+		var update = chat.getMessagesToApp();
+		update();
+	}, 2000);
 };
 
 new App({
