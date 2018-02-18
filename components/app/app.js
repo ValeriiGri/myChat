@@ -103,7 +103,7 @@ class App{
 			onChange:function(avatar,el){			//onChange for avatar form
 				chat.avatarLink = avatar;
 				el.style.transform = 'translateY(-500px)';
-				el.style.transitionDuration = '2s'; 
+				el.style.transitionDuration = '1s'; 
 				chat.render();
 			}
 		});
