@@ -138,7 +138,7 @@ class App{
 		let id = setInterval(()=>{
 			let update = chat.getMessagesToApp();
 				update();
-		},2000);
+		},5000);
 	}
 }
 new App({

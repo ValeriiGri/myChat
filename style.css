@@ -49,7 +49,7 @@
 }
 .chat__messages__msg__avatar>img{
     border-radius: 50%;
-    background-color: green;
+    background-color: #66ff66;
 }
 .chat__messages::-webkit-scrollbar{
     width:12px;

@@ -222,7 +222,7 @@ var App = function App(_ref) {
 	var id = setInterval(function () {
 		var update = chat.getMessagesToApp();
 		update();
-	}, 2000);
+	}, 5000);
 };
 
 new App({
