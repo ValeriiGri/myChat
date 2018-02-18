@@ -2,20 +2,25 @@
 import {Chat} from './../chat/chat.js';
 import {Form} from './../form/form.js';
 import {User} from './../user/user.js';
+import {Avatar} from './../avatar/avatar.js'
 
 class App{
-	constructor({el,elModal}){
+	constructor({el,elModal,elModalAva}){
 		this.el = el;
 		this.elModal = elModal;
+		this.elModalAva = elModalAva;
 		this.nickName = 'Anonymous';//nickName by default
+		this.avatar = 'https://i.imgur.com/biq2MDZ.png';//avatar by default
 
 		let chat = new Chat({
 			el:document.createElement('div'),
 			name:this.nickName,
-			elModal:this.elModal, //for onClick method through chat component
-			onClick:function(elModal){
-				elModal.style.transform = 'translateY(500px)';
-				elModal.style.transitionDuration = '1s';
+			avatar:this.avatar,
+			elModal:this.elModal,//for onClick method through chat component
+			elModalAva:this.elModalAva, 
+			onClick:function(el){
+				el.style.transform = 'translateY(500px)';
+				el.style.transitionDuration = '1s';
 			},
 			getMessages:function(){
 				let xhr = new XMLHttpRequest();
@@ -42,24 +47,33 @@ class App{
 			messages:[]
 		});
 
+		let time = new Date();
+
+		let hours = function(){
+			if(time.getHours()<10){
+				return '0' + time.getHours();
+			}else return time.getHours();
+		};
+
+		let mins = function(){
+			if(time.getMinutes()<10){
+				return '0'+ time.getMinutes();
+			}else return time.getMinutes();
+		};
+
+		let day = time.getDate();
+		let month = time.getMonth()+1;
+
 		let form = new Form({
 			el:document.createElement('div'),
 			existMessages:{},
 			onSubmit:function(message){			//onSubmit for message form
-					
-					let time = new Date();
-					let hours = time.getHours();
-					let mins = time.getMinutes();
-					let day = time.getDate();
-					let month = time.getMonth()+1;
-					
-					if(hours<10) hours ='0' + hours;
-					if(mins<10) mins ='0'+ mins;
 
 					chat.messages.unshift({			//by submitting message form - add data in array messages
-						date:[hours,mins,day,month],
+						date:[hours(),mins(),day,month],
 						name:chat.name,
-						text:message
+						text:message,
+						avatar:chat.avatarLink
 					});
 
 				chat.render();
@@ -79,6 +93,21 @@ class App{
 			}
 		});
 
+		let avatar = new Avatar({
+			el:document.createElement('form'),
+			elDivAvatar:this.elModalAva,
+			onClick:function(el){
+				el.style.transform = 'translateY(500px)';
+				el.style.transitionDuration = '1s';
+			},
+			onChange:function(avatar,el){			//onChange for avatar form
+				chat.avatarLink = avatar;
+				el.style.transform = 'translateY(-500px)';
+				el.style.transitionDuration = '2s'; 
+				chat.render();
+			}
+		});
+
 		let user = new User({
 			el:document.createElement('form'),
 			elDivModal:this.elModal,
@@ -93,24 +122,27 @@ class App{
 		this.el.appendChild(chat.el);
 		this.el.appendChild(form.el);
 		this.elModal.appendChild(user.el);
+		this.elModalAva.appendChild(avatar.el);
 		//add classes to divs
 		document.querySelector('.js-app>div').classList.add('chat');
 		document.querySelector('.js-app>div:nth-child(2)').classList.add('form');
-		document.querySelector('.modal>form').classList.add('user-form');
+		//document.querySelector('.modal>form').classList.add('user-form');
 
 		chat.render();
 		form.render();
 		user.render();
+		avatar.render();
 
 		//for updating chat messages when another user write message 
-		setInterval(function(){
-			let update = chat.getMessagesToApp();
-			update();
-		}, 3000);
+		
+		// let id = setInterval(()=>{
+		// 	let update = chat.getMessagesToApp();
+		// 		update();
+		// },2000);
 	}
 }
-
 new App({
 		el:document.querySelector('.js-app'),
-		elModal:document.querySelector('.modal')
+		elModal:document.querySelector('.modal'),
+		elModalAva:document.querySelector('.modal-ava')
 	});

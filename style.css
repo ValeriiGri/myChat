@@ -47,6 +47,10 @@
 	color:navy;
 	font-style: italic;
 }
+.chat__messages__msg__avatar>img{
+    border-radius: 50%;
+    background-color: green;
+}
 .chat__messages::-webkit-scrollbar{
     width:12px;
 }
@@ -94,7 +98,16 @@ form{
     position: relative;/*for z-index*/ 
     background-color: white;
 }
-.modal>form{
+.modal-ava{
+    /*margin-top: -950px;*/
+    margin-left: 35%;
+    width:30%;
+    z-index: 2;
+    position: relative;/*for z-index*/ 
+    background-color: white;
+}
+.modal>form,
+.modal-ava>form{
     border:1px solid green;
     box-shadow: inset 0 0 11px green;
     display:flex;
